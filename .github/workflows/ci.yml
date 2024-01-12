@@ -19,8 +19,4 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew clean build
-
-      - name: Run Tests
-        if: ${{ success() }}  # Only run tests if the build was successful
-        run: ./gradlew test
+        run: ./gradlew clean build -Djdk.instrument.traceUsage
